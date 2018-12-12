@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BEAUTIFUL ASTRO</title>
+    <link rel="stylesheet" href="./space.css">
+    <script type="text/javascript">
+      function downloadJSAtOnload() {
+         var element = document.createElement("script");
+         element.src = "space.js";
+         document.body.appendChild(element);
+      }
+      if (window.addEventListener) {
+        window.addEventListener("load", downloadJSAtOnload, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onload", downloadJSAtOnload);
+      } else {
+       window.onload = downloadJSAtOnload;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="space-pic-div">
+      <img src="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">
+      <p class="text-box"></p>
+    </div>
+  </body>
+</html>
