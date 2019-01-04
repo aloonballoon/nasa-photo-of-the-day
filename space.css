@@ -58,6 +58,7 @@ body {
   background-color: black;
 }
 
+
 .space-pic-div {
 	height: 100%;
 	width: 100%;
@@ -68,16 +69,17 @@ body {
 }
 
 img {
-  height: auto;
-  width: 90%;
+	height: auto;
+	width: 90%;
 }
 
 .text-box {
 	padding: 10px;
 	width: auto;
 	height: auto;
-	color: white;
+	color: turquoise;
 	text-align: center;
+	font-size: 25px;
 }
 
 #date {
@@ -92,6 +94,49 @@ img {
 	padding: 10px;
 	width: auto;
 	height: auto;
-	color: white;
+	color: hotpink;
 	text-align: center;
+	font-size: 30px;
+}
+
+
+@media only screen and (min-width: 600px) {
+	.space-pic-div {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	img {
+	  height: auto;
+	  width: 90%;
+	}
+	
+	.text-box {
+		padding: 10px;
+		width: auto;
+		height: auto;
+		color: white;
+		text-align: center;
+		font-size: 15px;
+	}
+	
+	#date {
+		padding: 10px;
+		width: auto;
+		height: auto;
+		color: white;
+		text-align: center;
+	}
+	
+	#title {
+		padding: 10px;
+		width: auto;
+		height: auto;
+		color: white;
+		text-align: center;
+	}
 }
