@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -53,54 +53,16 @@ html {
 }
 
 body {
-  height: 100%;
+	height: 100%;
   margin: 0;
   background-color: black;
 }
 
 
-.space-pic-div {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-}
+@media only screen 
+	and (min-width: 375px) 
+	and (max-width: 767px) {
 
-img {
-	height: auto;
-	width: 90%;
-}
-
-.text-box {
-	padding: 10px;
-	width: auto;
-	height: auto;
-	color: turquoise;
-	text-align: center;
-	font-size: 25px;
-}
-
-#date {
-	padding: 10px;
-	width: auto;
-	height: auto;
-	color: white;
-	text-align: center;
-}
-
-#title {
-	padding: 10px;
-	width: auto;
-	height: auto;
-	color: hotpink;
-	text-align: center;
-	font-size: 30px;
-}
-
-
-@media only screen and (min-width: 600px) {
 	.space-pic-div {
 		height: 100%;
 		width: 100%;
@@ -111,8 +73,8 @@ img {
 	}
 	
 	img {
-	  height: auto;
-	  width: 90%;
+		height: auto;
+		width: auto;
 	}
 	
 	.text-box {
@@ -139,4 +101,45 @@ img {
 		color: white;
 		text-align: center;
 	}
+}
+
+
+.space-pic-div {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+img {
+	height: auto;
+	width: 100%;
+}
+
+.text-box {
+	padding: 10px;
+	width: auto;
+	height: auto;
+	color: turquoise;
+	text-align: center;
+	font-size: 17px;
+}
+
+#date {
+	padding: 10px;
+	width: auto;
+	height: auto;
+	color: white;
+	text-align: center;
+}
+
+#title {
+	padding: 10px;
+	width: auto;
+	height: auto;
+	color: hotpink;
+	text-align: center;
+	font-size: 30px;
 }
