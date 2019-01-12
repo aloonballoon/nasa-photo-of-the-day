@@ -71,7 +71,9 @@ body {
 }
 
 img {
+	width: auto;
 	height: auto;
+	border: solid white 1px;
 }
 
 .text-box {
