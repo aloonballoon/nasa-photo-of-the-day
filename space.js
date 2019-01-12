@@ -6,9 +6,7 @@ const spaceImgElement = document.getElementById('space-img');
 const hd = true;
 
 const fetchImage = async () => {
-  console.time('start')
   const response = await fetch(`https://api.nasa.gov/planetary/apod?hd=${hd}&api_key=m1ic6nHpL7Whqs593Vf1YlWwlCfi5FK6PflXdMdE`);
-  console.timeEnd('start')
   const jsonResp = await response.json();
   return jsonResp;
 };
