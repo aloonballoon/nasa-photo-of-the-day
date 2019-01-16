@@ -71,7 +71,7 @@ body {
 }
 
 img {
-	width: auto;
+	max-width: 80%;
 	height: auto;
 	border: solid white 1px;
 }

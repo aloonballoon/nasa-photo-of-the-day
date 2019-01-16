@@ -11,11 +11,12 @@ const fetchImage = async () => {
   return jsonResp;
 };
 
-const renderImage = (jsonResp) => {
+const attachImage = (jsonResp) => {
   const date = jsonResp.date;
   const explanation = jsonResp.explanation;
   const title = jsonResp.title;
   const urlType = hd ? 'hdurl' : 'url';
+
   spaceImgElement.src = jsonResp[urlType];
   textElement.innerHTML = explanation;
   titleElement.innerHTML = title;
@@ -25,7 +26,7 @@ const renderImage = (jsonResp) => {
 const createTheUniverse = async () => {
   console.time('universe')
   const jsonResp = await fetchImage();
-  renderImage(jsonResp);
+  attachImage(jsonResp);
   console.timeEnd('universe')
 }
 
