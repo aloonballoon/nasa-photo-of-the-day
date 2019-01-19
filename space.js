@@ -1,8 +1,12 @@
+'use strict'
+
 const spaceDiv = document.getElementsByClassName('space-pic-div')[0];
 const titleElement = document.getElementById('title');
 const dateElement = document.getElementById('date');
 const textElement = document.getElementById('text-box');
 const spaceImgElement = document.getElementById('space-img');
+const spaceVidElement = document.getElementById('space-video');
+const copyrightElement = document.getElementById('copyright');
 const hd = true;
 
 const fetchImage = async () => {
@@ -11,23 +15,34 @@ const fetchImage = async () => {
   return jsonResp;
 };
 
-const attachImage = (jsonResp) => {
+const attachMedia = (jsonResp) => {
+  const urlType = hd ? 'hdurl' : 'url';
+  const mediaElement = jsonResp.media_type === 'video' ? spaceVidElement : spaceImgElement;
+  
+  mediaElement.src = jsonResp[urlType];
+  mediaElement.style.display = 'inline';
+};
+
+const attachDescriptors = (jsonResp) => {
+  if (jsonResp.copyright) {
+    copyrightElement.innerHTML = `Image Credit: ${jsonResp.copyright}`;
+  } else {
+    copyrightElement.innerHTML = `Image Credit: Public Domain`;
+  }
+  
   const date = jsonResp.date;
   const explanation = jsonResp.explanation;
   const title = jsonResp.title;
-  const urlType = hd ? 'hdurl' : 'url';
 
-  spaceImgElement.src = jsonResp[urlType];
   textElement.innerHTML = explanation;
   titleElement.innerHTML = title;
   dateElement.innerHTML = date;
 };
 
 const createTheUniverse = async () => {
-  console.time('universe')
   const jsonResp = await fetchImage();
-  attachImage(jsonResp);
-  console.timeEnd('universe')
+  attachMedia(jsonResp);
+  attachDescriptors(jsonResp);
 }
 
 createTheUniverse();
