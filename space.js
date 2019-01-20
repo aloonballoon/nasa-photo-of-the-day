@@ -16,8 +16,17 @@ const fetchImage = async () => {
 };
 
 const attachMedia = (jsonResp) => {
-  const urlType = hd ? 'hdurl' : 'url';
-  const mediaElement = jsonResp.media_type === 'video' ? spaceVidElement : spaceImgElement;
+  let urlType;
+  let mediaElement;
+  
+  if (jsonResp.media_type === 'video') {
+    mediaElement = spaceVidElement;
+    urlType = 'url';
+  } else {
+    mediaElement = spaceImgElement;
+    urlType = hd ? 'hdurl' : 'url';
+  }
+
   
   mediaElement.src = jsonResp[urlType];
   mediaElement.style.display = 'inline';
