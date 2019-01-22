@@ -60,7 +60,6 @@ body {
 
 
 
-
 .space-pic-div {
 	height: auto;
 	width: 100%;
@@ -92,7 +91,7 @@ body {
 	height: auto;
 	color: cadetblue;
 	text-align: center;
-	font-size: 17px;
+	font-size: 25px;
 }
 
 #date {
@@ -118,4 +117,11 @@ body {
 	color: indianred;
 	text-align: center;
 	font-size: 30px;
+}
+
+
+@media (max-width: 600px) {
+  .text-box {
+    font-size: 17px;
+  }
 }
